@@ -25,7 +25,7 @@ variable "vault_cluster_name" {
 
 variable "vault_source_image" {
   description = "The Google Image used to launch each node in the Consul Server cluster."
-  default = "vault-consul-2018-10-09-012041"
+  default = "vault-consul-2018-11-14-044041"
 }
 
 variable "vault_cluster_machine_type" {
@@ -40,7 +40,7 @@ variable "consul_server_cluster_name" {
 
 variable "consul_server_source_image" {
   description = "The Google Image used to launch each node in the Consul Server cluster."
-  default = "vault-consul-2018-10-09-012041"
+  default = "vault-consul-2018-11-14-044041"   
 }
 
 variable "consul_server_machine_type" {

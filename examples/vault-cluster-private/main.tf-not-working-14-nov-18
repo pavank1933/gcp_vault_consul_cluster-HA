@@ -66,14 +66,14 @@ module "vault_cluster" {
 
 # Render the Startup Script that will run on each Vault Instance on boot. This script will configure and start Vault.
 data "template_file" "startup_script_vault" {
-  template = "${file("${path.module}/startup-script-vault.sh")}"
+  template = "${file("${path.module}/test-vault.sh")}"
 
-  vars {
-    consul_cluster_tag_name = "${var.consul_server_cluster_name}"
-    vault_cluster_tag_name = "${var.vault_cluster_name}"
-    enable_vault_ui = "${var.enable_vault_ui ? "--enable-vault-ui" : ""}"
-    web_proxy_port = "${var.web_proxy_port}"
-  }
+#  vars {
+#    consul_cluster_tag_name = "${var.consul_server_cluster_name}"
+#    vault_cluster_tag_name = "${var.vault_cluster_name}"
+#    enable_vault_ui = "${var.enable_vault_ui ? "--enable-vault-ui" : ""}"
+#    web_proxy_port = "${var.web_proxy_port}"
+#  }
 }
 
 # ---------------------------------------------------------------------------------------------------------------------
@@ -130,10 +130,10 @@ module "consul_cluster" {
 
 # This Startup Script will run at boot configure and start Consul on the Consul Server cluster nodes
 data "template_file" "startup_script_consul" {
-  template = "${file("${path.module}/startup-script-consul.sh")}"
-
-  vars {
-    cluster_tag_name   = "${var.consul_server_cluster_name}"
-  }
+  template = "${file("${path.module}/test-consul.sh")}"
+#
+#  vars {
+#    cluster_tag_name   = "${var.consul_server_cluster_name}"
+#  }
 }
 
